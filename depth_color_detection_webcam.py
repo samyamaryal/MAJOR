@@ -12,6 +12,8 @@ device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cp
 midas.to(device)
 midas.eval()
 
+print(device)
+
 # Load transforms to resize and normalize the image
 midas_transforms = torch.hub.load("intel-isl/MiDaS", "transforms", source = 'github', trust_repo = True)
 
@@ -65,6 +67,7 @@ while cap.isOpened():
     # Reading the video from the 
 	# webcam in image frames 
     imageFrame = depth_map
+
     
 	# Convert the imageFrame in 
 	# BGR(RGB color space) to 
